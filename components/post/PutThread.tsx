@@ -25,22 +25,30 @@ const PutThread = () => {
       StarterKit,
     ],
     content: `
-      <div>
-        <p>Hi there,</p>
-        <p>
-          Thanks for subscribing! We're excited to have you on board. Stay tuned
-          for updates, news, and exclusive content delivered straight to your inbox.
-        </p>
-        <p>
-          In the meantime, why not check out our latest blog post?
-        </p>
-      </div>
-      <div>
-        <p>You’re receiving this email because you signed up on our website.</p>
-        <p>Unsubscribe at any time by clicking <a href="#">here</a>.</p>
-        <br>
-        <p>Cheers,<br>The Team</p>
-      </div>
+    <article class="post">
+  <header>
+    <h2>Building an Audience: A Compounding Investment</h2>
+    <p>Building an audience is a great investment that compounds over the years, maximizing the impact of everything else you do online.</p>
+  </header>
+
+  <section aria-labelledby="tips-title">
+    <h3 id="tips-title">Tips to get started</h3>
+    <ul>
+      <li>🚀 <strong>Start small</strong></li>
+      <li>📋 <strong>Consistently deliver value</strong></li>
+      <li>✨ <strong>Watch your influence multiply</strong></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>
+      This is why
+      <a href="https://typefully.com" target="_blank" rel="noopener">@typefully</a>
+      is an investment in your future reach and impact.
+    </p>
+  </footer>
+</article>
+
     `,
     autofocus: true,
     immediatelyRender: false,
@@ -71,10 +79,7 @@ const PutThread = () => {
   };
 
   return (
-    <div
-      className="border-gray-300 dark:border-gray-700 overflow-hidden hide-scrollbar w-full min-h-56 p-4 border-2 border-dashed border-white/30 rounded-lg focus-within:border-[#101113] focus-within:bg-black/10 dark:focus-within:bg-[#101113] dark:focus-within:border-white text-gray-900 dark:text-white 
-   focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-300"
-    >
+    <div className="">
       {/* Bubble Menu with comment button */}
       {editor && (
         <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>

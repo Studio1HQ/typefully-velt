@@ -111,7 +111,7 @@ export function Header({ onToggleSidebar }: HeaderProps) {
   return (
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="flex h-14 items-center justify-between px-4">
-        <div className="flex items-center gap-4">
+        <div className=" flex items-center gap-4">
           <Button
             variant="ghost"
             size="icon"
@@ -120,7 +120,7 @@ export function Header({ onToggleSidebar }: HeaderProps) {
           >
             <Menu className="h-4 w-4" />
           </Button>
-          <div className="flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2">
             <div className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center">
               <span className="text-white font-bold text-sm">T</span>
             </div>
@@ -135,7 +135,7 @@ export function Header({ onToggleSidebar }: HeaderProps) {
           </div>
         </div>
 
-        <div className="flex items-center justify-end gap-2 space-x-3">
+        <div className="flex items-center justify-end gap-3 lg:gap-4 ">
           <VeltCommentsSidebar darkMode={theme === "dark"} />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -208,7 +208,7 @@ export function Header({ onToggleSidebar }: HeaderProps) {
           <Button variant="ghost" size="icon" className="h-9 w-9">
             <Share className="h-4 w-4" />
           </Button>
-          <Button variant="ghost" size="icon" className="h-9 w-9">
+          <Button variant="ghost" size="icon" className="hidden lg:block h-9 w-9">
             <Settings className="h-4 w-4" />
           </Button>
           <ThemeToggle />

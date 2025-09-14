@@ -3,18 +3,18 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import {
+  BookImage,
+  Ellipsis,
+  Equal,
+  Hash,
+  Loader,
   MoreHorizontal,
-  Heart,
-  MessageCircle,
-  Repeat2,
-  Share,
-  Wand2,
+  Sparkles,
 } from "lucide-react";
-import { Textarea } from "../ui/textarea";
 import PutThread from "./PutThread";
-
+import { useUserStore } from "@/helper/userdb";
+import { Heart, MessageCircle, Repeat2, Share, Wand2 } from "lucide-react";
 interface PostCardProps {
   author: {
     name: string;
@@ -22,30 +22,53 @@ interface PostCardProps {
     avatar: string;
     verified?: boolean;
   };
-  content: string;
   timestamp?: string;
+  content?: string;
   isThread?: boolean;
+  showConnector?: boolean; // NEW
 }
 
 export function PostCard({
   author,
-  content,
   timestamp,
   isThread,
+  content,
+  showConnector = false,
 }: PostCardProps) {
+  const { user } = useUserStore();
   return (
-    <Card className="p-3 sm:p-4 mb-4 hover:shadow-md transition-shadow">
-      <div className="flex items-start gap-3">
-        <Avatar className="h-10 w-10">
-          <AvatarImage src={author.avatar} alt={author.name} />
-          <AvatarFallback>
-            {author.name.slice(0, 2).toUpperCase()}
-          </AvatarFallback>
-        </Avatar>
+    <div className="p-3 sm:p-4 hover:shadow-md transition-shadow">
+      <div className="flex items-start gap-3 relative">
+        {/* Avatar column */}
+        <div className="">
+          <Avatar className="h-10 w-10">
+            <AvatarImage src={user?.photoUrl} alt={user?.displayName} />
+            <AvatarFallback>
+              {user?.displayName?.slice(0, 2)?.toUpperCase()}
+            </AvatarFallback>
+          </Avatar>
+
+          {/* Thread connector line */}
+          {showConnector && (
+            <span
+              className="
+                absolute
+                -translate-x-1/2
+                h-[110%]
+                left-5
+                top-10   /* starts right under the 40px (h-10) avatar */
+                bottom-4 /* extends a bit past this card to meet the next avatar */
+                w-0.5 bg-border
+              "
+            />
+          )}
+        </div>
+
+        {/* Content column */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-2">
             <span className="font-semibold text-sm sm:text-base truncate">
-              {author.name}
+              {user?.displayName || author.name}
             </span>
             {author.verified && (
               <Badge
@@ -77,55 +100,20 @@ export function PostCard({
               {content}
             </p>
           </div>
-          {isThread && (
-            <div className="flex items-start gap-3">
-              <div className="flex-1">
-               <PutThread/>
-                <div className="flex gap-2 w-full sm:w-auto justify-end my-3 ">
-                  <Button variant="outline" size="sm">
-                    Save Draft
-                  </Button>
-                  <Button size="sm">Add Tweet</Button>
-                </div>
-              </div>
-            </div>
-          )}
 
-          <div className="flex items-center gap-3 sm:gap-6 mt-3 pt-2 border-t">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="gap-2 text-muted-foreground hover:text-foreground"
-            >
-              <Heart className="h-4 w-4" />
-              <span className="text-xs">12</span>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="gap-2 text-muted-foreground hover:text-foreground"
-            >
-              <MessageCircle className="h-4 w-4" />
-              <span className="text-xs">3</span>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="gap-2 text-muted-foreground hover:text-foreground"
-            >
-              <Repeat2 className="h-4 w-4" />
-              <span className="text-xs">8</span>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="gap-2 text-muted-foreground hover:text-foreground"
-            >
-              <Share className="h-4 w-4" />
-            </Button>
+          {isThread && <PutThread />}
+          <div className="flex justify-end items-center gap-3 sm:gap-6 ">
+            <Loader className="h-4 w-4 gap-2 text-muted-foreground hover:text-foreground" />
+            <div className="text-muted-foreground hover:text-foreground flex justify-center items-center">
+              <Hash className="h-4 w-4 gap-2 " />2
+            </div>
+            <Equal className="h-4 w-4 gap-2 text-muted-foreground hover:text-foreground" />
+            <BookImage className="h-4 w-4 gap-2 text-muted-foreground hover:text-foreground" />
+            <Sparkles className="h-4 w-4 gap-2 text-muted-foreground hover:text-foreground" />
+            <Ellipsis className="h-4 w-4 gap-2 text-muted-foreground hover:text-foreground" />
           </div>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }
