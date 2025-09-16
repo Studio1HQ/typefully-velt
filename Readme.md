@@ -20,7 +20,7 @@ A collaborative email composer built with Next.js, React, Tailwind CSS, and [Vel
 ## Tech Stack
 
 - **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **UI**: [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com/)
+- **UI**: [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/)
 - **RTE**: [Tiptap](https://tiptap.dev/)
 - **Collaboration**: [Velt](https://velt.dev/)
 - **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
