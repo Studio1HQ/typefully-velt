@@ -37,7 +37,7 @@ export function PostCard({
 }: PostCardProps) {
   const { user } = useUserStore();
   return (
-    <div className="p-3 sm:p-4 hover:shadow-md transition-shadow">
+    <div className="p-3 sm:p-4 transition-shadow">
       <div className="flex items-start gap-3 relative">
         {/* Avatar column */}
         <div className="">
