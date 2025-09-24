@@ -67,7 +67,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         </div>
         
       <div className="p-4">
-        <Button className="w-full justify-start gap-2 h-10">
+        <Button className="w-full justify-start gap-2 h-10" variant={"outline"}>
           <Plus className="h-4 w-4" />
           New draft
         </Button>

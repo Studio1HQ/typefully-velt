@@ -2,7 +2,6 @@
 
 import { Search, Settings, Share, Menu, User, ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 interface HeaderProps {
   onToggleSidebar: () => void;
@@ -26,7 +25,7 @@ import {
 } from "@veltdev/react";
 import { names, userIds, useUserStore } from "@/helper/userdb";
 import { useEffect, useMemo, useRef } from "react";
-import { useTheme } from "next-themes";
+import useTheme, { ThemeToggleButton } from "@/hooks/use-theme";
 // import useTheme, { ThemeToggleButton } from "@/hooks/useTheme";
 export function Header({ onToggleSidebar }: HeaderProps) {
   const { user, setUser } = useUserStore();
@@ -211,7 +210,7 @@ export function Header({ onToggleSidebar }: HeaderProps) {
           <Button variant="ghost" size="icon" className="hidden lg:block h-9 w-9">
             <Settings className="h-4 w-4" />
           </Button>
-          <ThemeToggle />
+          <ThemeToggleButton />
           <VeltNotificationsTool darkMode={theme === "dark"} />
           <VeltSidebarButton darkMode={theme === "dark"} />
         </div>

@@ -79,7 +79,7 @@ const PutThread = () => {
   };
 
   return (
-    <div className="">
+    <div className="border-2 p-4 my-3 border-dashed rounded">
       {/* Bubble Menu with comment button */}
       {editor && (
         <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>

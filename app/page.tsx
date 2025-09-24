@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/header";
 import { Sidebar } from "@/components/layout/sidebar";
 import { ThreadView } from "@/components/post/thread-view";
 import { VeltComments, VeltProvider } from "@veltdev/react";
+import useTheme from "@/hooks/use-theme";
 
 export default function Home() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function Home() {
   const closeSidebar = () => {
     setSidebarOpen(false);
   };
-
+const {theme}=useTheme()
   return (
     <VeltProvider apiKey={process.env.NEXT_PUBLIC_VELT_ID!}>
       <div className="min-h-screen bg-background">
@@ -32,6 +33,7 @@ export default function Home() {
         textMode={false}
         shadowDom={false}
         textCommentToolShadowDom={false}
+        darkMode={theme==="dark"}
       />
     </VeltProvider>
   );
