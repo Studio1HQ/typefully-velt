@@ -1,6 +1,6 @@
 # TypeFully Velt Example (Next.js)
 
-A collaborative content composer built with Next.js, React, Tailwind CSS, and [Velt](https://velt.dev), enabling real-time commenting and multi-user collaboration — ideal for modern content and social media workflows.
+Typefully-style Collaborative Editor, where we built a Typefully clone with Velt features like real-time commenting and multi-user collaboration in the comment sections.
 
 ---
 
