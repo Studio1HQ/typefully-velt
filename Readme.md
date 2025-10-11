@@ -1,12 +1,12 @@
 # TypeFully Velt Example (Next.js)
 
-A collaborative email composer built with Next.js, React, Tailwind CSS, and [Velt](https://velt.dev), demonstrating real-time commenting and multi-user collaboration for modern SaaS applications.
+A collaborative content composer built with Next.js, React, Tailwind CSS, and [Velt](https://velt.dev), enabling real-time commenting and multi-user collaboration — ideal for modern content and social media workflows.
 
 ---
 
 ## Features
 
-- ✉️ **Comment Composer**: Comment with a rich text editor (Tiptap).
+- ✉️ **Rich Comment Composer**: Add comments using a rich text editor powered by Tiptap.
 - 🧑‍🤝‍🧑 **Multi-User Support**: Switch between predefined users with avatars.
 - 🧑‍🤝‍🧑 **Live-User**: Live users with avatars.
 - 💬 **Real-Time Comments**: Add and view collaborative comments using Velt.
