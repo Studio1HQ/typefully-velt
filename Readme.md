@@ -41,7 +41,7 @@ Typefully-style Collaborative Editor, where we built a Typefully clone with Velt
 1. Clone the repository
 
    ```bash
-   git clone ------
+   git clone https://github.com/Studio1HQ/typefully-velt.git
    ```
 
 2. Navigate to the `typefully-comments` directory
