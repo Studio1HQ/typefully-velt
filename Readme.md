@@ -1,159 +1,135 @@
-# TypeFully Velt Example (Next.js)
+<div align="center">
 
-Typefully-style Collaborative Editor, where we built a Typefully clone with Velt features like real-time commenting and multi-user collaboration in the comment sections.
+<img src="https://raw.githubusercontent.com/Studio1HQ/Studio1HQ/main/assets/banners/typefully-velt.webp" alt="Typefully-Style Editor with Velt: A Typefully-style thread editor with live comments and presence" width="100%" />
 
----
+<br />
+<br />
+
+# Typefully-Style Editor with Velt
+
+### A Typefully-style thread editor with live comments and presence
+
+A Next.js clone of the Typefully thread editor. Velt adds comments on post text through a Tiptap editor, plus presence, a comments sidebar and notifications.
+
+<br />
+
+[![Built by Studio1](https://img.shields.io/badge/Built_by_Studio1-f97316?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAgMTYwIiBmaWxsPSJub25lIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgMzVDMCAxNi42ODA3IDE0LjA3NDQgMS42NDg0NCAzMiAwLjEyNjk1M1YxNDFINTEuMDUyM0M1Mi40MzA4IDEzNy4zNDQgNTQuNzQ0NiAxMzMuNjg5IDU3Ljk5MzggMTMwLjAzM0M2MS4xNDQ2IDEyNi41MDggNjQuNjg5MiAxMjMuNDQgNjguNjI3NyAxMjAuODI5QzcyLjU2NjIgMTE4LjM0OSA3Ni4zNTY5IDExNi43ODIgODAgMTE2LjEyOVY4Ni43NTQ0Qzc1LjQ3MDggODcuOTI5MiA3MS4zODQ2IDg5LjY5MTkgNjcuNzQxNSA5Mi4wNDE1QzY0IDk0LjUyMjUgNjAuNzUwOCA5Ny40NiA1Ny45OTM4IDEwMC44NTRDNTYuNTM0NSAxMDIuNzIgNTUuMjU0NSAxMDQuNjU5IDU0LjE1MzkgMTA2LjY3MVYwSDEyNUMxNDQuMzMgMCAxNjAgMTUuNjY5OSAxNjAgMzVWMTI1QzE2MCAxNDQuMzMgMTQ0LjMzIDE2MCAxMjUgMTYwSDEyNFYxOEgxMDQuOTQ4QzEwMy41NjkgMjEuNjgxNiAxMDEuMjU1IDI1LjM2MjggOTguMDA2MiAyOS4wNDQ0Qzk0Ljg1NTQgMzIuNTk0MiA5MS4zMTA4IDM1LjY4NDEgODcuMzcyMyAzOC4zMTRDODMuNDMzOCA0MC44MTIgNzkuNjQzMSA0Mi4zODk2IDc2IDQzLjA0NzRWNzIuNjMwNEM4MC41MjkyIDcxLjQ0NzMgODQuNjE1NCA2OS42NzI0IDg4LjI1ODUgNjcuMzA1N0M5MiA2NC44MDc2IDk1LjI0OTIgNjEuODQ5MSA5OC4wMDYyIDU4LjQzMDdDOTkuNDY1NSA1Ni41NTEzIDEwMC43NDUgNTQuNTk4NiAxMDEuODQ2IDUyLjU3MjNWMTYwSDM1QzE1LjY3IDE2MCAwIDE0NC4zMyAwIDEyNVYzNVoiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4K)](https://studio1hq.com)
+[![Built with Velt](https://img.shields.io/badge/Built_with_Velt-141414?style=for-the-badge)](https://velt.dev)
+[![Live demo](https://img.shields.io/badge/Live_demo-1c1917?style=for-the-badge&logo=vercel&logoColor=white)](https://typefully-velt.vercel.app/)
+
+[Velt docs](https://docs.velt.dev) &nbsp;·&nbsp; [Velt](https://velt.dev) &nbsp;·&nbsp; [More examples](https://github.com/Studio1HQ) &nbsp;·&nbsp; [studio1hq.com](https://studio1hq.com)
+
+</div>
+
+<br />
+
+## Overview
+
+This is a Typefully-style collaborative thread editor built with Next.js and [Velt](https://velt.dev). Users write a post thread in a Tiptap editor and comment on the text together.
+
+The `PutThread` component configures `TiptapVeltComments` so comments attach to selected text. The header adds presence, notifications and a comments sidebar, and lets you switch between predefined users.
 
 ## Features
 
-- ✉️ **Rich Comment Composer**: Add comments using a rich text editor powered by Tiptap.
-- 🧑‍🤝‍🧑 **Multi-User Support**: Switch between predefined users with avatars.
-- 🧑‍🤝‍🧑 **Live-User**: Live users with avatars.
-- 💬 **Real-Time Comments**: Add and view collaborative comments using Velt.
-- 🌓 **Dark/Light Theme**: Toggle between dark and light modes.
-- 📊 **Sidebar**: Sidebar for navigation.
-- 🔔 **Notifications**: In-app notifications powered by Velt.
-- 🧩 **Reusable UI Components**: Built with Radix primitives.
+- **Comments on post text**: `VeltComments` with the `TiptapVeltComments` extension from `@veltdev/tiptap-velt-comments`.
+- **Rich text composer**: A Tiptap editor for post content.
+- **Presence**: `VeltPresence` shows live users with avatars.
+- **Notifications**: `VeltNotificationsTool` provides in-app notifications.
+- **Comments sidebar**: `VeltCommentsSidebar` with a `VeltSidebarButton`.
+- **Multi-user support**: Switch between predefined users with avatars.
+- **Theme and layout**: Dark and light mode, and a navigation sidebar.
 
----
+## Tech stack
 
-## Tech Stack
+| Layer | Tool |
+| --- | --- |
+| Framework | [Next.js](https://nextjs.org) (App Router), [React](https://react.dev), TypeScript |
+| Collaboration | [Velt](https://velt.dev) (`@veltdev/react`, `@veltdev/tiptap-velt-comments`) |
+| Editor | [Tiptap](https://tiptap.dev) |
+| UI | [Tailwind CSS](https://tailwindcss.com), [Radix UI](https://www.radix-ui.com), [Lucide](https://lucide.dev) |
+| State | [Zustand](https://zustand-demo.pmnd.rs) |
+| Deployment | [Vercel](https://vercel.com) |
 
-- **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **UI**: [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/)
-- **RTE**: [Tiptap](https://tiptap.dev/)
-- **Collaboration**: [Velt](https://velt.dev/)
-- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Other**: [Radix UI](https://www.radix-ui.com/)
+## Getting started
 
----
+### Prerequisites
 
-## Prerequisites
+- Node.js 16 or later
+- pnpm (the original README uses pnpm; npm 8 or later also works)
+- A Velt API key from the [Velt console](https://console.velt.dev)
 
-- **Node.js** (v16+ recommended)
-- **npm** (v8+ recommended)
+### Installation
 
----
-
-## Getting Started
-
-1. Clone the repository
-
-   ```bash
-   git clone https://github.com/Studio1HQ/typefully-velt.git
-   ```
-
-2. Navigate to the `typefully-comments` directory
-
-   ```bash
-   cd typefully
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   pnpm install
-   ```
-
-4. Create a `.env.local` file with your Velt API key:
-
-   ```
-   NEXT_PUBLIC_VELT_ID=your_api_key_here
-   ```
-   reference to `sample.env` file
-   > Note: You can get your API key from the [Velt Dashboard](https://app.velt.dev)
-
-5. Run the development server:
-
-   ```bash
-   pnpm run dev
-   ```
-
-6. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## Project Structure
-
-```
-typefully-comments/
-├── app/                 # Next.js app directory
-├── components/          # React components
-│   ├── layout/          # web-app components
-│   ├── post/            # web-app components related to the post/thread
-│   └── ui/              # UI components
-├── helper/              # Users DB
-├── hooks/               # Toast Hooks, Theme
-├── lib/                 # Utility functions and types
-├── public/              # Static assets
+```bash
+git clone https://github.com/Studio1HQ/typefully-velt.git
+cd typefully-velt
+pnpm install
 ```
 
-## Velt Integration
+### Environment variables
 
-This project uses Velt SDK v4.5.0-beta.14 for real-time collaboration features:
+Create a `.env.local` file in the project root. `sample.env` shows the format.
 
-### Core Features
+| Variable | Description |
+| --- | --- |
+| `NEXT_PUBLIC_VELT_ID` | Your Velt API key. |
 
-- User presence and cursor tracking
-- Comments and annotations
-- Notifications
-- Real-time updates
+### Run
 
-### Velt Components Used
+```bash
+pnpm run dev
+```
 
-- `VeltProvider`: Main provider component for Velt integration
-- `VeltComments`: Inline commenting system
-- `VeltNotificationsTool`: Notification system
-- `VeltCommentsSidebar`: Comments management sidebar
-- `VeltInlineCommentsSection`: Inline section commenting system
-- `VeltPresence`: To show the active users
+Open [http://localhost:3000](http://localhost:3000). Other scripts: `build`, `start`, `lint`.
 
-### Configuration
+## How it works
 
-The application uses the following Velt configurations:
+```text
+app/                  Next.js app directory
+components/layout/    app shell and header
+components/post/      post and thread components (PutThread)
+components/ui/        UI primitives
+helper/               users DB
+hooks/                toast and theme hooks
+lib/                  utilities and types
+```
 
-- Document ID: "typefully-comments"
-- User authentication with predefined users
-- Custom comment bubble styling
-- Dark/Light mode support
+`VeltProvider` wraps the app. `components/layout/header.tsx` identifies the selected user with `client.identify(...)` and sets the Velt document. The original README names the document ID `typefully-comments`. `PutThread.tsx` configures `TiptapVeltComments` with `persistVeltMarks: false`. Comment bubbles have custom styling.
 
-## Troubleshooting
+Troubleshooting:
 
-### Common Issues
+- **API key problems**: check `.env.local` and that the key is active in the Velt console.
+- **Collaboration not working**: check the browser console, network and browser support.
+- **Build issues**: remove `.next` and `node_modules`, then reinstall.
 
-1. **Velt API Key Issues**
+## Resources
 
-   - Ensure your API key is correctly set in `.env.local`
-   - Verify the key is active in your Velt Dashboard
+- [Live demo](https://typefully-velt.vercel.app/): the deployed app.
+- [Velt documentation](https://docs.velt.dev): SDK guides.
+- [Velt](https://velt.dev): product site.
+- [Tiptap](https://tiptap.dev): editor framework.
 
-2. **Collaboration Features Not Working**
+<br />
 
-   - Check browser console for errors
-   - Verify network connectivity
-   - Ensure you're using a supported browser
+---
 
-3. **Build Issues**
-   - Clear `.next` directory and node_modules
-   - Run `pnpm install` again
-   - Check Node.js version compatibility
+<div align="center">
 
-## Documentation
+<a href="https://studio1hq.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Studio1HQ/website/main/brand/studio1-logo-on-dark.svg" />
+    <img src="https://raw.githubusercontent.com/Studio1HQ/website/main/brand/studio1-logo-on-light.svg" alt="Studio1" width="160" />
+  </picture>
+</a>
 
-### Velt Resources
+Built by **[Studio1](https://studio1hq.com)**, the technical content and DevRel partner for devtool teams. Made with [Velt](https://velt.dev).<br />
+Browse more open-source examples at [github.com/Studio1HQ](https://github.com/Studio1HQ).
 
-- [Velt Documentation](https://docs.velt.dev/getting-started/introduction)
-- [Velt API Reference](https://docs.velt.dev/api-reference)
-- [Velt Dashboard](https://app.velt.dev)
-- [Velt GitHub](https://github.com/veltdev)
+[![Website](https://img.shields.io/badge/studio1hq.com-0b0807?style=for-the-badge&logo=googlechrome&logoColor=white)](https://studio1hq.com)
+[![Book a call](https://img.shields.io/badge/Book_a_strategy_call-f97316?style=for-the-badge&logo=googlecalendar&logoColor=white)](https://cal.com/studio1/collab)
+[![X](https://img.shields.io/badge/%40Studio1HQ-141414?style=for-the-badge&logo=x&logoColor=white)](https://x.com/Studio1HQ)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/studio1hq/)
 
-### UI Components
+<sub><a href="https://studio1hq.com">studio1hq.com</a> · Technical content, docs, video and DevRel for devtools</sub>
 
-- [Radix UI Documentation](https://www.radix-ui.com/themes/docs/overview/getting-started)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-
-## Contributing
-
-Feel free to submit issues and enhancement requests. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+</div>
